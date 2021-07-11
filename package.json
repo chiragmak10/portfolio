@@ -43,7 +43,20 @@
   "devDependencies": {
     "@types/react": "^17.0.14",
     "autoprefixer": "^9.8.6",
+    "husky": "^7.0.1",
+    "lint-staged": "^11.0.0",
     "postcss": "^7.0.36",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.4"
+  },
+  "husky":{
+    "hooks":{
+      "pre-commit":"lint-staged"
+    } 
+  },
+  "lint-staged":{
+    "*.{.tsx.ts.js,htl,css}":[
+      "prettier --single-quote --write",
+      "git add"
+    ]
   }
 }
